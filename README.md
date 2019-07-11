@@ -1,2 +1,2 @@
 # Workout-Assistant-Codelab
-Codelab to create a Workout Assistant with Actions on Google
+Codelab source code to create a Workout Assistant with Actions on Google
