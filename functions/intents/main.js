@@ -77,7 +77,7 @@ function backCommand(conv,str1){
     if(conv.data.round<1)
       exerciseBack(conv)
     else{
-      if(conv.exercise==1){
+      if(conv.exercise===1){
         conv.data.exercise=workouts[workout].exercises.length-1
         conv.data.round--
       } else{
