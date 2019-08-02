@@ -1,5 +1,5 @@
 {
-  "name": "Workout Assistant Codelab",
+  "name": "Workout-Assistant-Codelab",
   "description": "A codelab for Google Assistant",
   "scripts": {
     "lint": "eslint .",

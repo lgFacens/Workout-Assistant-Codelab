@@ -10,7 +10,7 @@ const {workouts} = require('./src/workouts')
 function strGen(conv,str,workout){
   let id = conv.data.exercise
   let reps = workouts[workout].exercises[id].reps
-  let breaktime = workouts[workout].exercises[id].time + conv.data.velocity
+  let breaktime = workouts[workout].exercises[id].time
   for(let i=1;i<=reps;i++)
     str+=i + ` <break time="${breaktime}"/> `
   str+=`<break time="2s"/>. `
@@ -41,7 +41,7 @@ function speak(conv,str1){
     if(conv.data.round<workouts[workout].rounds){
       str2+=`First round over, take a rest of ${rest} minutes. <break time='60s'/> Can we continue? </speak>`
       conv.ask(new SimpleResponse({
-        text: `First round over, take a rest of ${rest} minutes. Can we continue? </speak>`,
+        text: `First round over, take a rest of ${rest} minutes. Can we continue?`,
         speech: str2
       }))
     } else{
@@ -105,14 +105,6 @@ exports.main = (conv) =>{
   switch (command) {
     case "stop":
       str1 = stopCommand(conv,str1)
-      break;
-
-    case "slower":
-      str1 = slowerCommand(conv,str1)
-      break;
-
-    case "faster":
-      str1 = fasterCommand(conv,str1)
       break;
 
     case "break":
